@@ -32,8 +32,8 @@ deploy:
         cmd: ./app
         tag: $WERCKER_GIT_COMMIT
         ports: "5000"
-        repository: quay.io/wercker/wercker-kubernetes-quay
-        registry: https://quay.io
+        repository: pranjal10/wercker-kubernetes-quay
+        registry: https://hub.docker.com
 
     # Run this to create the rc and service
     initialize:
@@ -59,4 +59,4 @@ deploy:
         password: $KUBERNETES_PASSWORD
         insecure-skip-tls-verify: true
         command: rolling-update cities
-        image: quay.io/wercker/wercker-kubernetes-quay:$WERCKER_GIT_COMMIT
+        image: pranjal10/wercker-kubernetes-quay:$WERCKER_GIT_COMMIT
