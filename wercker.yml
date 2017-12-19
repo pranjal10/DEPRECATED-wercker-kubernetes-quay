@@ -35,28 +35,9 @@ deploy:
         repository: pranjal10/wercker-kubernetes-quay
         registry: https://hub.docker.com
 
-    # Run this to create the rc and service
-    initialize:
     - kubectl:
         server: $KUBERNETES_MASTER
         username: $KUBERNETES_USERNAME
         password: $KUBERNETES_PASSWORD
         insecure-skip-tls-verify: true
-        command: create -f cities-controller.json
-
-    - kubectl:
-        server: $KUBERNETES_MASTER
-        username: $KUBERNETES_USERNAME
-        password: $KUBERNETES_PASSWORD
-        insecure-skip-tls-verify: true
-        command: create -f cities-service.json
-
-    # Update the replica controller to $WERCKER_GIT_COMMIT
-    rolling-update:
-    - kubectl:
-        server: $KUBERNETES_MASTER
-        username: $KUBERNETES_USERNAME
-        password: $KUBERNETES_PASSWORD
-        insecure-skip-tls-verify: true
-        command: rolling-update cities
-        image: pranjal10/wercker-kubernetes-quay:$WERCKER_GIT_COMMIT
+        command: get pods
