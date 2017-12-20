@@ -39,15 +39,17 @@ deploy:
     initialize:
     - kubectl:
         server: $KUBERNETES_MASTER
-        username: $KUBERNETES_USERNAME
-        password: $KUBERNETES_PASSWORD
+        token: $KUBERNETES_TOKEN
+        #username: $KUBERNETES_USERNAME
+        #password: $KUBERNETES_PASSWORD
         insecure-skip-tls-verify: true
         command: create -f cities-controller.json
 
     - kubectl:
         server: $KUBERNETES_MASTER
-        username: $KUBERNETES_USERNAME
-        password: $KUBERNETES_PASSWORD
+        token: $KUBERNETES_TOKEN
+        #username: $KUBERNETES_USERNAME
+        #password: $KUBERNETES_PASSWORD
         insecure-skip-tls-verify: true
         command: create -f cities-service.json
 
@@ -55,8 +57,9 @@ deploy:
     rolling-update:
     - kubectl:
         server: $KUBERNETES_MASTER
-        username: $KUBERNETES_USERNAME
-        password: $KUBERNETES_PASSWORD
+        token: $KUBERNETES_TOKEN
+        #username: $KUBERNETES_USERNAME
+        #password: $KUBERNETES_PASSWORD
         insecure-skip-tls-verify: true
         command: rolling-update cities
         image: pranjal10/wercker-kubernetes-quay:$WERCKER_GIT_COMMIT
