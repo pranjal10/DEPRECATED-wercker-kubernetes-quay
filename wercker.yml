@@ -35,6 +35,17 @@ deploy:
         repository: pranjal10/wercker-kubernetes-quay
         registry: https://hub.docker.com
 
+    # Run this to deletee the old rc
+    #delete:
+    - kubectl:
+        name : deleteController
+        server: $KUBERNETES_MASTER
+        #token: $KUBERNETES_TOKEN
+        username: $KUBERNETES_USERNAME
+        password: $KUBERNETES_PASSWORD
+        insecure-skip-tls-verify: true
+        command: delete -f cities-controller.json
+   
     # Run this to create the rc and service
     #initialize:
     - kubectl:
