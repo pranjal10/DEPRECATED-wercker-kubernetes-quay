@@ -36,8 +36,9 @@ deploy:
         registry: https://hub.docker.com
 
     # Run this to create the rc and service
-    initialize:
+    #initialize:
     - kubectl:
+        name : initializeController
         server: $KUBERNETES_MASTER
         token: $KUBERNETES_TOKEN
         #username: $KUBERNETES_USERNAME
@@ -46,6 +47,7 @@ deploy:
         command: create -f cities-controller.json
 
     - kubectl:
+        name : initializeService
         server: $KUBERNETES_MASTER
         token: $KUBERNETES_TOKEN
         #username: $KUBERNETES_USERNAME
@@ -54,8 +56,9 @@ deploy:
         command: create -f cities-service.json
 
     # Update the replica controller to $WERCKER_GIT_COMMIT
-    rolling-update:
+    #rolling-update:
     - kubectl:
+        name : rolling-update
         server: $KUBERNETES_MASTER
         token: $KUBERNETES_TOKEN
         #username: $KUBERNETES_USERNAME
