@@ -8,7 +8,7 @@
       }
    },
    "spec":{
-      "createExternalLoadBalancer": true,
+      "CreateExternalLoadBalancer": true,
       "ports": [
          {
            "port": 5000,
