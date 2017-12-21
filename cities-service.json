@@ -18,7 +18,6 @@
       "selector":{
          "name":"cities"
       },
-      "type": "LoadBalancer",
-      "createExternalLoadBalancer": true
+      "type": "LoadBalancer"
    }
 }
