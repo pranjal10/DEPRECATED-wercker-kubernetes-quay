@@ -37,14 +37,14 @@ deploy:
 
     # Run this to delete the old rc and service
     #delete:
-    - kubectl:
-        name : deleteController
-        server: $KUBERNETES_MASTER
+    #- kubectl:
+    #    name : deleteController
+    #    server: $KUBERNETES_MASTER
         #token: $KUBERNETES_TOKEN
-        username: $KUBERNETES_USERNAME
-        password: $KUBERNETES_PASSWORD
-        insecure-skip-tls-verify: true
-        command: delete -f cities-controller.json
+    #    username: $KUBERNETES_USERNAME
+    #    password: $KUBERNETES_PASSWORD
+    #    insecure-skip-tls-verify: true
+    #    command: delete -f cities-controller.json
     
     #- kubectl:
     #    name : deleteService
