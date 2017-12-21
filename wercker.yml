@@ -75,5 +75,5 @@ deploy:
         username: $KUBERNETES_USERNAME
         password: $KUBERNETES_PASSWORD
         insecure-skip-tls-verify: true
-        command: rolling-update cities
+        command: rolling-update cities --image-pull-policy=Always
         image: pranjal10/wercker-kubernetes-quay:$WERCKER_GIT_COMMIT
