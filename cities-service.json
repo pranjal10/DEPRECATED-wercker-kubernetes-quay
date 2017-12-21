@@ -8,8 +8,7 @@
       }
    },
    "spec":{
-      "publicIPs": ["35.193.33.174","35.225.190.105","35.226.196.241"
-    ],
+      "createExternalLoadBalancer": true,
       "ports": [
          {
            "port": 5000,
